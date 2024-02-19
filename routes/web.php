@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\Counter;
+use App\Http\Livewire\{
+    ShowTweets,
+    Counter
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +22,4 @@ Route::get('/', function () {
 });
  
 Route::get('/counter', Counter::class);
+Route::get('/tweets', ShowTweets::class);

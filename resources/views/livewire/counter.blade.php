@@ -1,4 +1,4 @@
-<x-layouts.layout>
+
     <div>
         <h1>{{ $count }}</h1>
      
@@ -6,4 +6,3 @@
      
         <button wire:click="decrement">-</button>
     </div>
-</x-layouts.layout>
