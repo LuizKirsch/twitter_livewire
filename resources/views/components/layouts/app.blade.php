@@ -6,7 +6,6 @@
         <title>{{ $title ?? 'Page Title' }}</title>
     </head>
     <body>
-        teste
         {{ $slot }}
     </body>
 </html>
