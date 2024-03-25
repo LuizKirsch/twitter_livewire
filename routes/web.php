@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\{
     ShowTweets,
-    Counter
+    Counter,
 };
+use App\Http\Livewire\User\UploadPhoto;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +24,9 @@ Route::get('/', function () {
  
 Route::get('/counter', Counter::class);
 
-
 Route::middleware('auth')->group(function () {
-    Route::get('/tweets', ShowTweets::class);
+    Route::get('/tweets', ShowTweets::class)->name('tweets.index');
+    Route::get('/upload', UploadPhoto::class)->name('upload.photo.user');
 });
 
 Route::middleware([
