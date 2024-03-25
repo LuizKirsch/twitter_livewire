@@ -33,15 +33,23 @@ class ShowTweets extends Component
         auth()->user()->tweets()->create([
             'content' => $this->content,
         ]);
-
         $this->content = '';
     }
 
-    public function submitForm()
-    {
-        $valor = $this->campo;
+    public function like($id){
+        $tweet = Tweet::find($id);
+        
+        $tweet->likes()->create([
+            'user_id' => auth()->user()->id,
+        ]);
+    }
 
-        dd($valor);
+    public function unLike(Tweet $tweet){
+        $tweet->likes()->delete();
+    }
+
+    public function delete(Tweet $tweet){
+        $tweet->delete();
     }
 
 }
